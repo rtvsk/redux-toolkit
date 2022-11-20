@@ -1,5 +1,8 @@
 import { useDispatch } from "react-redux";
 import { removeTodo, toggleTodo } from "./store/todoSlice";
+import ToggleOnIcon from '@mui/icons-material/ToggleOn';
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 const TodoItem = ({
     completed,
@@ -19,11 +22,16 @@ const TodoItem = ({
     }
 
     return (
-        <li onClick={(e) => onRemove(e)}>
-            {text}
+        <li>
             <div onClick={(e) => onToggle(e)}>
-                {completed ? ": true" : ": false"}
+                {
+                    completed
+                        ? <ToggleOnIcon />
+                        : <ToggleOffIcon />
+                }
             </div>
+            <span>{text}</span>
+            <DeleteForeverIcon onClick={(e) => onRemove(e)} />
         </li>
     )
 }

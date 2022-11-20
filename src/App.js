@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "./store/todoSlice";
 import './App.css';
 import TodoList from "./TodoList";
+import AddIcon from '@mui/icons-material/Add';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 function App() {
   const dispatch = useDispatch();
@@ -19,8 +22,14 @@ function App() {
 
   return (
     <div className="App">
-      <input type="text" value={text} onChange={onChangeText} />
-      <button onClick={onAddTodo}>+</button>
+      <TextField value={text} onChange={onChangeText} />
+      <Button
+        variant="outlined"
+        startIcon={<AddIcon />}
+        onClick={onAddTodo}
+      >
+        ADD
+      </Button>
       <TodoList />
     </div>
   );
