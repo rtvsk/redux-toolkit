@@ -10,9 +10,8 @@ const TodoList = () => {
                 <TodoItem
                     key={todo.id}
                     completed={todo.completed}
-                    text={todo.text}
+                    text={todo.title}
                     id={todo.id}
-                    idx={i}
                 />
             ))}
         </ul>

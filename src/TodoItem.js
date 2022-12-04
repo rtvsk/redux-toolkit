@@ -8,7 +8,6 @@ const TodoItem = ({
     completed,
     text,
     id,
-    idx
 }) => {
     const dispatch = useDispatch();
 
@@ -25,7 +24,7 @@ const TodoItem = ({
     return (
         <li>
             <div onClick={(e) => onToggle(e)}>
-            <span>{idx + 1}) {text}</span>
+            <span>{id}) {text}</span>
             {
                 completed
                     ? <ToggleOnIcon />
