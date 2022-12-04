@@ -7,7 +7,8 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 const TodoItem = ({
     completed,
     text,
-    id
+    id,
+    idx
 }) => {
     const dispatch = useDispatch();
 
@@ -24,13 +25,13 @@ const TodoItem = ({
     return (
         <li>
             <div onClick={(e) => onToggle(e)}>
-                {
-                    completed
-                        ? <ToggleOnIcon />
-                        : <ToggleOffIcon />
-                }
+            <span>{idx + 1}) {text}</span>
+            {
+                completed
+                    ? <ToggleOnIcon />
+                    : <ToggleOffIcon />
+            }
             </div>
-            <span>{text}</span>
             <DeleteForeverIcon onClick={(e) => onRemove(e)} />
         </li>
     )
